@@ -255,13 +255,20 @@ console.log(deleteOne('Questa è la vita', true));
 
 console.log('---------------------------ESERCIZIO 5-------------------------------');
 function onlyletters(string) {
-  for (i = 0; i < 9; i++) {
-    string = string.replace(`${i}`, '');
+  for (let i = 0; i < 10; i++) {
+    string = string.replaceAll(`${i}`, '');
   }
+  let string2 = string.split('');
+  for (let j = 0; j < string2.length; j++) {
+    if (string2[j] === ' ' && string2[j + 1] === ' ') {
+      let a = string2.splice(j, 1);
+    }
+  }
+  string = string2.join('');
   return string;
 }
 
-let stringIns = 'Ci son 20 coccodrilli 3 elefanti 4 maiali';
+let stringIns = 'Ci son 20 coccodrilli 3 elefanti indiani 4 maiali 99 uccellini';
 console.log(`La stringa '${stringIns}' modificata viene cosi: ${onlyletters(stringIns)}`);
 
 /* ESERCIZIO 6
@@ -324,7 +331,7 @@ function rollTheDices (n) {
   return result;
 } 
 
-console.log(rollTheDices(2));
+console.log(rollTheDices(4));
 
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
