@@ -512,22 +512,31 @@ console.log(removeIndex(2));
 */
 
 console.log('---------------------------ESERCIZIO 20-------------------------------');
-const divContainer = document.getElementById('container');
-console.log(divContainer);
+findContainer = () => {
+  const divContainer = document.getElementById('container');
+  return divContainer;
+}
+console.log(findContainer());
+
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
 */
 
 console.log('---------------------------ESERCIZIO 21-------------------------------');
+findTabCells = () => {
+  const cells = document.querySelectorAll('td');
+  return cells;
+}
+console.log(findTabCells());
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
 
+console.log('---------------------------ESERCIZIO 22-------------------------------');
 function cellPrint () {
-const cells = document.querySelectorAll('td');
-cells.forEach(item => {
+findTabCells().forEach(item => {
   console.log(item.innerText);
   });
 };
@@ -659,7 +668,7 @@ function isItPrime (n) {
     return true;
   } 
 
-for (i = 1; i < 101; i++) {
+for (i = 1; i < 10; i++) {
   console.log(`Il numero ${i} è primo: ${isItPrime(i)}`);
 }  
  

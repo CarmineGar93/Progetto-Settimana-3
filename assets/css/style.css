@@ -1,6 +1,7 @@
 .red {
     background-color: red;
     display: inline-block;
+    margin: 10px;
 }
 
 table, th, td {
@@ -8,6 +9,7 @@ table, th, td {
     border: 1px solid black;
     padding: 10px;
     margin: 10px;
+    width: 300px;
 }
 
 .test {
