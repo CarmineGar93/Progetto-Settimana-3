@@ -647,20 +647,20 @@ function tree(n) {
     array.push(' ');
   }
   array.push('*');
-  arrayJoined = array.join('');
-  console.log(arrayJoined);
-  arrayJoined = [];
+  let stringJoined = array.join('');
+  console.log(stringJoined);
+  stringJoined = '';
   for (let i = 1; i < n; i++) {
     array.shift();
     array.push('*');
     array.push('*');
-    arrayJoined = array.join('');
-    console.log(arrayJoined);
-    arrayJoined = [];
+    stringJoined = array.join('');
+    console.log(stringJoined);
+    stringJoined = '';
   }
   console.log('Buon Nataleeeeeeeeeeeee');
 }
-tree(20);
+tree(25);
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
