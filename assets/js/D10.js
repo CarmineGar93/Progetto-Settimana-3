@@ -676,6 +676,6 @@ function isItPrime(n) {
   return true;
 }
 
-for (i = 1; i < 10; i++) {
+for (let i = 1; i < 50; i++) {
   console.log(`Il numero ${i} è primo: ${isItPrime(i)}`);
 }
