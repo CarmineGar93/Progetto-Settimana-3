@@ -259,9 +259,10 @@ function onlyletters(string) {
     string = string.replaceAll(`${i}`, '');
   }
   let string2 = string.split('');
+  let a;
   for (let j = 0; j < string2.length; j++) {
     if (string2[j] === ' ' && string2[j + 1] === ' ') {
-      let a = string2.splice(j, 1);
+      a = string2.splice(j, 1);
     }
   }
   string = string2.join('');
@@ -319,17 +320,17 @@ console.log(`Oggi è ${whatDayIsIt()}`);
 */
 
 console.log('---------------------------ESERCIZIO 8-------------------------------');
-function rollTheDices (n) {
+function rollTheDices(n) {
   const result = {
     sum: 0,
     values: [],
   };
- for (i = 0; i < n; i++) {
+  for (i = 0; i < n; i++) {
     result.values.push(dice());
   }
   result.sum = result.values.reduce((somma, val) => somma + val);
   return result;
-} 
+}
 
 console.log(rollTheDices(4));
 
@@ -338,17 +339,17 @@ console.log(rollTheDices(4));
 */
 
 console.log('---------------------------ESERCIZIO 9-------------------------------');
-function howManyDays (date) {
-  let totMilliseconds = Date.parse(today);    
+function howManyDays(date) {
+  let totMilliseconds = Date.parse(today);
   let milliseconds = Date.parse(date);
   let millisecondsPassed = totMilliseconds - milliseconds;
   let days = millisecondsPassed / 86400000;
   days = Math.floor(days);
-  return days; 
+  return days;
 }
 
-let inputDate = new Date (1993, 5, 21);
-console. log(`Dalla data ${inputDate} sono passati ${howManyDays(inputDate)} giorni`);
+let inputDate = new Date(1993, 5, 21);
+console.log(`Dalla data ${inputDate} sono passati ${howManyDays(inputDate)} giorni`);
 
 
 /* ESERCIZIO 10
@@ -366,7 +367,7 @@ function isTodayMyBirthday(date) {
   }
 }
 
-let inputDate2 = new Date (1992, currentMonth, currentDay);
+let inputDate2 = new Date(1992, currentMonth, currentDay);
 console.log(`Data di nascita: ${inputDate} - Compleanno: ${isTodayMyBirthday(inputDate)}`);
 console.log(`Data di nascita: ${inputDate2} - Compleanno: ${isTodayMyBirthday(inputDate2)}`);
 
@@ -381,7 +382,7 @@ console.log(`Data di nascita: ${inputDate2} - Compleanno: ${isTodayMyBirthday(in
 */
 
 console.log('---------------------------ESERCIZIO 11-------------------------------');
-function deleteProp (obj, string) {
+function deleteProp(obj, string) {
   delete obj[string];
   return obj;
 }
@@ -395,12 +396,12 @@ console.log(deleteProp(me, 'skills'))
 
 console.log('---------------------------ESERCIZIO 12-------------------------------');
 
-function newestMovie () {
+function newestMovie() {
   let newest = movies[0].Year;
   let newestFilm = {};
   movies.forEach(item => {
     if (item.Year > newest) {
-      newestFilm = {...item};
+      newestFilm = { ...item };
       newest = item.Year;
     }
   })
@@ -415,7 +416,7 @@ console.log(newestMovie());
 */
 
 console.log('---------------------------ESERCIZIO 13-------------------------------');
-function countMovies () {
+function countMovies() {
   let count = movies.length;
   return count;
 };
@@ -428,7 +429,7 @@ console.log(`I film contenuti nell'array sono: ${countMovies()}`);
 */
 
 console.log('---------------------------ESERCIZIO 14-------------------------------');
-function onlyTheYears () {
+function onlyTheYears() {
   const years = movies.map(item => {
     return item.Year;
   })
@@ -456,7 +457,7 @@ console.log(onlyInLastMillennium());
 */
 
 console.log('---------------------------ESERCIZIO 16-------------------------------');
-function sumAllTheYears () {
+function sumAllTheYears() {
   const totYear = movies.reduce((sum, item) => sum + parseInt(item.Year), 0);
   return totYear
 }
@@ -504,9 +505,9 @@ console.log(searchAndDivide('Lord'));
   Scrivi una funzione chiamata "removeIndex" che riceve un numero come parametro e ritorna l'array "movies" fornito privo dell'elemento nella posizione ricevuta come parametro.
 */
 console.log('---------------------------ESERCIZIO 19-------------------------------');
-function removeIndex (n) {
+function removeIndex(n) {
   let moviesCopy = [...movies];
-  moviesCopy.splice(n,1);
+  moviesCopy.splice(n, 1);
   return moviesCopy;
 }
 
@@ -542,9 +543,9 @@ console.log(findTabCells());
 */
 
 console.log('---------------------------ESERCIZIO 22-------------------------------');
-function cellPrint () {
-findTabCells().forEach(item => {
-  console.log(item.innerText);
+function cellPrint() {
+  findTabCells().forEach(item => {
+    console.log(item.innerText);
   });
 };
 
@@ -554,7 +555,7 @@ cellPrint();
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
 */
 
-function redLinks () {
+function redLinks() {
   let links = document.getElementsByTagName('a');
   for (let i = 0; i < links.length; i++) {
     links[i].classList.add('red');
@@ -568,10 +569,10 @@ redLinks();
 */
 
 function addListElement(string) {
-    let myList = document.getElementById('myList')
-    let newLi = document.createElement('li');
-    newLi.innerText = string;
-    myList.appendChild(newLi);
+  let myList = document.getElementById('myList')
+  let newLi = document.createElement('li');
+  newLi.innerText = string;
+  myList.appendChild(newLi);
 };
 
 addListElement('Dormire');
@@ -580,7 +581,7 @@ addListElement('Dormire');
   Scrivi una funzione per svuotare la lista non ordinata con id "myList".
 */
 
-function clearList () {
+function clearList() {
   let myList = document.getElementById('myList');
   myList.innerHTML = '';
 }
@@ -616,7 +617,7 @@ addTestClass();
 
 console.log('---------------------------ESERCIZIO 27-------------------------------');
 
-function halfTree (n) {
+function halfTree(n) {
   let result = '';
   for (let i = 0; i < n; i++) {
     result += '*';
@@ -642,7 +643,7 @@ console.log('---------------------------ESERCIZIO 28----------------------------
 
 function tree(n) {
   let array = [];
-  for (let i = 0; i < (n-1); i++) {
+  for (let i = 0; i < (n - 1); i++) {
     array.push(' ');
   }
   array.push('*');
@@ -666,16 +667,15 @@ tree(20);
 */
 
 console.log('---------------------------ESERCIZIO 29-------------------------------');
-function isItPrime (n) {
-    for (let i = 2; i < n; i++) {
-      if (n % i === 0) {
-        return false;
-      }
+function isItPrime(n) {
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      return false;
     }
-    return true;
-  } 
+  }
+  return true;
+}
 
 for (i = 1; i < 10; i++) {
   console.log(`Il numero ${i} è primo: ${isItPrime(i)}`);
-}  
- 
+}
